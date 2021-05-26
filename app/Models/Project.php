@@ -1,14 +1,12 @@
-<?
+<?php
 
 namespace App\Models;
 
-include_once 'BaseElement.php';
+use Illuminate\Database\Eloquent\Model;
 
-class Project extends BaseElement{
-    public function __construct($title,$description){
-        $this->title = $title;
-        $this->description = $description;
-    }
+
+class Project extends Model{
+   protected $table = 'jobs';
     
     public function getConversion(){
         $years = floor($this->meses / 12);
