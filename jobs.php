@@ -5,12 +5,10 @@ include_once 'app/Models/Job.php';
 include_once 'app/Models/Project.php';
 include_once 'lib1/Project.php';
 */
-
 use App\Models\{Job,Project, lesproyectos};
 
 
-
-$job1 = new Job('PHP DEVELEPERS','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into');
+/*$job1 = new Job('PHP DEVELEPERS','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into');
 $job1->visible = true;
 $job1->meses = 25;
 
@@ -24,21 +22,23 @@ $job3->meses = 18;
 
 $job4 = new Job('SQL DEVELOPERS','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into');
 $job4->visible = true;
-$job4->meses = 20;
+$job4->meses = 20;*/
 
+$jobs = Job::all();
 
-$project1  = new Project ('Mi proyecto 1', 'Esta es una descripción muy corta del proyecto 1');
-$project1->meses = 18;
-$jobs = [
+// $project1  = new Project ('Mi proyecto 1', 'Esta es una descripción muy corta del proyecto 1');
+// $project1->meses = 18;
+/*$jobs = [
             $job1,         
             $job2,
             $job3,
             $job4
-        ];
+        ];*/
 
-$projects = [
-            $project1
-];
+// $projects = [
+            // $project1
+// ];
+$projects = Project::all();
 
 $prx = new lesproyectos();
 $prx -> setProject('Proyecto X');
@@ -63,9 +63,9 @@ $proyectos = [
     function Myfunction ($dato){
         //var_dump($dato); $jobs[$valor]
         echo '<ul class="lista-titulo">';
-        echo '<li class="tamaño">' .$dato->getTitle(). '</li>';
+        echo '<li class="tamaño">' .$dato->title. '</li>';
         echo '</ul>';
-        echo '<p class="lista-titulo">' .$dato->getDescription(). '</p>';
+        echo '<p class="lista-titulo">' .$dato->description. '</p>';
         echo '<div>';
         echo '<h6 class="lista-titulo">Conocimientos</h6>';
         echo '<ul class="lista-titulo">';

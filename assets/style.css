@@ -31,3 +31,18 @@ ul:not(.browser-default)>li{
     font-size: 19px;
     font-style: bold;
 }
+.btn {
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+.btn-primary{
+    background-color: #343435 !important;
+    border-color: #0d7c6a !important;
+    color: #fff !important;
+    padding: 1.25rem 2.5rem;
+}
+.btn-primary:hover, .btn-primary:active {
+    background-color: #333333 !important;
+    border-color: #0d7c6a !important;
+}

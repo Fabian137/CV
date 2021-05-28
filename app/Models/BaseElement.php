@@ -4,7 +4,7 @@ namespace App\Models;
 include_once 'Interfaz.php';
 
 class BaseElement implements Interfaz{ 
-    protected $title;
+    public $title;
     public $description;
     public $visible;
     public $meses;

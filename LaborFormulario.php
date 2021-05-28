@@ -3,7 +3,7 @@
 require_once 'vendor/autoload.php';
 
 use Illuminate\Database\Capsule\Manager as Capsule;
-use App\Models\Project;
+use App\Models\Job;
 
 $capsule = new Capsule;
 
@@ -25,34 +25,33 @@ $capsule->setAsGlobal();
 $capsule->bootEloquent();
     
 if(!empty($_POST)){
-    $project = new Project();
-    $project->title = $_POST['title'];
-    $project->description = $_POST['description'];
-    // $project ->month = 23;
+    $job = new Job();
+    $job->title = $_POST['title'];
+    $job->description = $_POST['description'];
+    $job ->meses = $_POST['meses'];
     // $project-> visible=true;
-    $project->save();
+    $job->save();
 }
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
     <link rel="stylesheet" href="assets/style.css">
+    <title>Formulario</title>
 </head>
 <body>
-    <h1>Formulario básico</h1>
-    <form action="formulario.php" method="post">
+    <h1>Formulario para llenar la parte laboral</h1>
+    <form action="LaborFormulario.php" method="post">
         <label for="">Title: </label>
         <input type="text" name='title'><br>
         <label for="">Description: </label>
         <input type="text" name='description'><br>
+        <label for="">Experiencia: </label>
+        <input type="number" name='meses'><br>
         <button type='submit'>Enviar</button>
     </form>
     <a style="margin-top:2rem;" class="btn btn-primary" href="index.php">CV</a>

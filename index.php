@@ -1,11 +1,34 @@
 <?php 
+    require_once 'vendor/autoload.php';
+
+    use Illuminate\Database\Capsule\Manager as Capsule;
+    use App\Models\Project;
+    use App\Models\Job;
+
+    $capsule = new Capsule;
     
+    $capsule->addConnection([
+        'driver'    => 'mysql',
+        'host'      => '127.0.0.1:3308',
+        'database'  => 'ejemplophp',
+        'username'  => 'root',
+        'password'  => 'root',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+    ]);
+    
+    // Make this Capsule instance available globally via static methods... (optional)
+    $capsule->setAsGlobal();
+    
+    // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
+    $capsule->bootEloquent();
+
     $nombre = "Fabián";
     $apellido = 'Beltrán';
     $nombreCompleto = $nombre . $apellido;
     $boolean = false;
     //var_dump($nombre);
-
     require_once('jobs.php');
 
 ?>
@@ -68,6 +91,8 @@
                     Myfunction($jobs[$valor]);
                 }
             ?>
+
+            <a href="LaborFormulario.php" style="margin-top:2rem;" class="btn btn-primary">Formulario</a>
         </div>
     </section>
 
@@ -81,6 +106,7 @@
                         Myfunction($projects[$valor]);
                     }
                 ?>
+                <a href="formulario.php" style="margin-top:2rem;" class="btn btn-primary">Formulario Proyectos</a>
             </div>
 
             <?php
