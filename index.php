@@ -84,7 +84,7 @@
     <section class="section">
         <div class="container">
             <h4 class="otra-seccion" style="margin-top:2rem;">Experiencia Laboral</h4>
-
+            <a style="padding: 0.5rem 1rem;" type="button"class="btn btn-primary" href="LaborFormulario.php">Formulario</a>
             <?php 
                 $valor = 0;
                 $totalMeses = 0;
@@ -92,7 +92,6 @@
                     Myfunction($jobs[$valor]);
                 }
             ?>
-            <a style="padding: 0.5rem 1rem;" type="button"class="btn btn-primary" href="LaborFormulario.php">Formulario</a>
         </div>
     </section>
 
