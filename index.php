@@ -40,21 +40,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
     <title>Document</title>
 </head>
 <body>
 
      <!--////////////// Datos Personales ////////////////////  -->
-    <div class="container">
+    <div class="container center">
         <div class="row section">
-            <div class="col s3 foto">
-                <img src="assets/img/man.jpg" alt="persona">
+            <div class="col foto">
+                <img src="assets/img/man.jpg" alt="persona" class="fotoprofile">
             </div>
-            <div class="col s7 texto-foto">
+            <div class="col-9 texto-foto">
                 <h4><?php echo $nombre ?></h4>
                 <h5>Científico de datos Bu</h5>
                 <ul>
@@ -82,7 +83,7 @@
 
     <section class="section">
         <div class="container">
-            <h4 class="otra-seccion">Experiencia Laboral</h4>
+            <h4 class="otra-seccion" style="margin-top:2rem;">Experiencia Laboral</h4>
 
             <?php 
                 $valor = 0;
@@ -91,8 +92,7 @@
                     Myfunction($jobs[$valor]);
                 }
             ?>
-
-            <a href="LaborFormulario.php" style="margin-top:2rem;" class="btn btn-primary">Formulario</a>
+            <a style="padding: 0.5rem 1rem;" type="button"class="btn btn-primary" href="LaborFormulario.php">Formulario</a>
         </div>
     </section>
 
@@ -100,13 +100,13 @@
         <div class="container">
             <div class="row">
                 <h4 class="otra-seccion">Proyectos</h4>
+                <a style="padding: 0.5rem 1rem; width:20%;" type="button"class="btn btn-primary" href="formulario.php">Formulario Proyectos</a>
                 <?php 
                     $valor = 0;
                     for ($valor=0; $valor < count($projects); $valor++){
                         Myfunction($projects[$valor]);
                     }
                 ?>
-                <a href="formulario.php" style="margin-top:2rem;" class="btn btn-primary">Formulario Proyectos</a>
             </div>
 
             <?php

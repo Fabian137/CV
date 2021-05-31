@@ -62,7 +62,7 @@ $proyectos = [
 
     function Myfunction ($dato){
         //var_dump($dato); $jobs[$valor]
-        echo '<ul class="lista-titulo">';
+        echo '<ul class="lista-titulo" style="margin-top:1rem;">';
         echo '<li class="tamaño">' .$dato->title. '</li>';
         echo '</ul>';
         echo '<p class="lista-titulo">' .$dato->description. '</p>';
@@ -79,12 +79,12 @@ $proyectos = [
     }
 
     function proyectos($data){
-        echo '<div class="row">';
+        echo '<div class="row" style="margin-top:1rem;">';
         echo    '<h5>'. $data -> getProject() .'</h5>';
-        echo        '<div class="col s2 foto">';
+        echo        '<div class="col foto">';
         echo            '<img src="assets/img/'. $data->img .'" alt="persona">';
         echo        '</div>';
-        echo        '<div class="col s6 texto-foto">';
+        echo        '<div class="col-9 texto-foto">';
         echo        '<p>'. $data->description .'</p>';
         echo       '</div>';   
         echo  '</div>';
